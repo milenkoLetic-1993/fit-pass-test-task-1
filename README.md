@@ -1,0 +1,11 @@
+- Install [Docker](https://docs.docker.com/engine/install/).
+- Cd to project root.
+- Copy `.env.example` to `.env`
+- Run `docker run --rm -u "$(id -u):$(id -g)" -v $(pwd):/var/www/html -w /var/www/html laravelsail/php81-composer:latest composer install --ignore-platform-reqs`
+- Run `./vendor/bin/sail up -d`
+- Run `./vendor/bin/sail artisan migrate:fresh --seed` 
+- Visit [http://localhost/sport-facilities](http://localhost/sport-facilities) to check for seeded sport facilities.
+- Visit [http://localhost/users](http://localhost/users) to check for seeded users.
+- Visit [http://localhost/cards](http://localhost/cards) to check for seeded cards.
+- Visit [http://localhost/reception](http://localhost/reception) with parameters from task to test user's card scanning.
+- Please use POSTMAN or similar tools for testing (set Headers Accept: application/json).
